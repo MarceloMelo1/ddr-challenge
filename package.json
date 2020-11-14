@@ -1,0 +1,30 @@
+{
+  "name": "app",
+  "description": "DDR Challenge",
+  "main": "index.js",
+  "scripts": {
+    "test": "nyc --reporter=html --reporter=text mocha --recursive ./test/unit/**/*.js --recursive ./test/functional/*.js --file ./test/teardown.js --exit"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "cron": "^1.8.2",
+    "dotenv": "^7.0.0",
+    "express": "^4.16.4",
+    "express-http-proxy": "^1.6.0",
+    "express-mongo-sanitize": "^1.3.2",
+    "helmet": "^3.21.3",
+    "http": "0.0.0",
+    "mongo-sanitize": "^1.1.0",
+    "mongodb": "^3.5.5",
+    "mongoose": "^5.9.5",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "nodemon": "^2.0.4",
+    "nyc": "^15.0.0",
+    "var_dump": "^1.0.5"
+  }
+}

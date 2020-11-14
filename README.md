@@ -1,5 +1,26 @@
 # Desafio back-end: matching de informações
 
+SET UP THE DEV ENVIROMENT
+-------------------------
+
+First Time running:
+
+```
+$ docker build -t ddr/challenge .
+$ docker-compose up -d
+$ docker-compose exec ddr.challenge.nodejs sh docker-config.sh
+```
+
+Install dependencies:
+
+Run inside the container the follow commad
+```
+$ docker exec -it ddr.challenge.nodejs bash
+$ npm install
+
+---------------------------------------------------------------------
+
+
 ## Desafio
 Crie um webservice que receba a entrada das entidades `Gravações` e `Tabulações` em endpoints separados e armazene no banco de dados.
 

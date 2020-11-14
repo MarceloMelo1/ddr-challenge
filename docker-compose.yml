@@ -1,0 +1,28 @@
+
+version: '3'
+services:
+  ddr.challenge.mongo:
+    container_name: ddr.challenge.mongo
+    image: mongo:4.2
+    volumes:
+      - ../ddr.db/challenge:/data/db
+    ports:
+      - 27017:27017
+    command: ["--auth", "--storageEngine", "wiredTiger"]
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: abc123
+  ddr.challenge.nodejs:
+    container_name: ddr.challenge.nodejs
+    tty: true
+    #command: npm start
+    image: ddr/challenge
+    working_dir: /var/node
+    ports:
+      - 8080:80
+    volumes:
+      - ../ddr.challenge:/var/node
+    depends_on:
+      - ddr.challenge.mongo
+    links:
+      - ddr.challenge.mongo:mongo-ddr
