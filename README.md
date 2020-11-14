@@ -17,6 +17,7 @@ Run inside the container the follow commad
 ```
 $ docker exec -it ddr.challenge.nodejs bash
 $ npm install
+```
 
 ---------------------------------------------------------------------
 
